@@ -13,8 +13,15 @@ export default class Dashboard extends Component {
       backlogInput: '',
       todoInput: '',
       completeInput: '',
-      inProgressInput: ''
+      inProgressInput: '',
+      didDelete: false
     };
+  }
+
+  componentDidUpdate = (prevProps, prevState) => {
+      if(prevState.didDelete != this.state.didDelete){
+          this.setState({didDelete: false})
+      }
   }
 
   newBacklogHandler = (text) => {
@@ -68,6 +75,10 @@ export default class Dashboard extends Component {
     complete.splice(index, 1)
   }
 
+  deleteTask = (arr, i) => {
+    arr.splice(i, 1)
+    this.setState({deleteTask: true})
+  }
   render() {
      let {backlog, toDo, inProgress, complete, backlogInput, todoInput, completeInput, inProgressInput} = this.state 
      let mappedBacklog = backlog.map((task, i) => {
@@ -76,6 +87,7 @@ export default class Dashboard extends Component {
             <p >{task}</p>
             <div>
             <button onClick={e => this.moveBacklogRight(task, i, backlog)}>{`>`}</button>
+            <button onClick={e => this.deleteTask(backlog, i)}>{`x`}</button>
             </div>
             </div>
         )
@@ -86,6 +98,7 @@ export default class Dashboard extends Component {
             <p >{task}</p>
             <div>
             <button onClick={e => this.moveCompleteLeft(task, i , complete)}>{`<`}</button>
+            <button onClick={e => this.deleteTask(complete, i)}>{`x`}</button>
             </div>
             </div>
         )
@@ -97,6 +110,7 @@ export default class Dashboard extends Component {
             <div>
             <button onClick={e => this.moveTodoLeft(task, i , toDo)}>{`<`}</button>
             <button onClick={e => this.moveTodoRight(task, i , toDo)}>{`>`}</button>
+            <button onClick={e => this.deleteTask(toDo, i)}>{`x`}</button>
             </div>
             </div>
         )
@@ -108,6 +122,7 @@ export default class Dashboard extends Component {
             <div>
             <button onClick={e => this.moveInProgressLeft(task, i , inProgress)}>{`<`}</button>
             <button onClick={e => this.moveInProgressRight(task, i , inProgress)}>{`>`}</button>
+            <button onClick={e => this.deleteTask(inProgress, i)}>{`x`}</button>
             </div>
             </div>
         )

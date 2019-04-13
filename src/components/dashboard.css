@@ -12,6 +12,8 @@
     box-shadow: 0px 1px 5px;
     padding: 20px;
     height: 90vh;
+    width: 90vw;
+    margin-right: 10px;
 }
 
 .backlog__innerContainer, .toDo__innerContainer, .inProgress__innerContainer, .complete__innerContainer {
@@ -62,4 +64,17 @@
     border: solid 1px rgb(75, 131, 75);
     box-shadow: 0px 0px 5px;
     background: rgb(75, 131, 75)
+}
+
+button {
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 18px;
+}
+
+input {
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 80%;
+    height: 15px;
 }
