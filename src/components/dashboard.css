@@ -1,0 +1,65 @@
+
+.dashContainer{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 50px;
+}
+
+
+.dashContainer__backlog, .dashContainer__toDo, .dashContainer__inProgress, .dashContainer__Complete {
+    border: solid 2px;
+    border-radius: 5px;
+    box-shadow: 0px 1px 5px;
+    padding: 20px;
+    height: 90vh;
+}
+
+.backlog__innerContainer, .toDo__innerContainer, .inProgress__innerContainer, .complete__innerContainer {
+    margin-top: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column
+}
+
+.dashContainer__backlog {
+    border-color: rgb(255, 0, 0);
+    background: rgb(255, 72, 72);
+}
+.dashContainer__toDo {
+    border-color: yellow;
+    background: rgb(255, 255, 69);
+}
+.dashContainer__inProgress {
+    border-color: blue;
+    background: rgb(60, 60, 248);
+}
+.dashContainer__Complete {
+    border-color: green;
+    background: rgb(21, 121, 21);
+}
+
+.backlog__innerContainer {
+    border: solid 1px rgb(250, 93, 93);
+    box-shadow: 0px 0px 5px;
+    background: rgb(250, 98, 98)
+}
+.toDo__innerContainer {
+    border: solid 1px rgb(247, 247, 135);
+    box-shadow: 0px 0px 5px;
+    background: rgb(247, 247, 135)
+}
+.inProgress__innerContainer {
+    border: solid 1px rgb(95, 95, 255);
+    box-shadow: 0px 0px 5px;
+    background: rgb(95, 95, 255);
+}
+.toDo__innerContainer {
+    border: solid 1px rgb(247, 247, 135);
+    box-shadow: 0px 0px 5px;
+    background: rgb(247, 247, 135)
+}
+.complete__innerContainer {
+    border: solid 1px rgb(75, 131, 75);
+    box-shadow: 0px 0px 5px;
+    background: rgb(75, 131, 75)
+}
